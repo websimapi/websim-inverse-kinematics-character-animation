@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inverse Kinematics Character Animation</title>
+    <style>
+        body { margin: 0; overflow: hidden; background-color: #f0f0f0; }
+        canvas { display: block; }
+        #info {
+            position: absolute;
+            top: 10px;
+            width: 100%;
+            text-align: center;
+            z-index: 100;
+            display:block;
+            color: #333;
+            font-family: Arial, sans-serif;
+        }
+        #target-controls {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            background: rgba(255, 255, 255, 0.7);
+            padding: 10px;
+            border-radius: 5px;
+            font-family: Arial, sans-serif;
+        }
+        #target-controls label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        #target-controls input[type="range"] {
+            width: 150px;
+        }
+    </style>
+</head>
+<body>
+    <div id="info">Inverse Kinematics Character Animation with Three.js<br/>Drag the target sphere</div>
+    <div id="target-controls">
+        <label for="targetX">Target X:</label>
+        <input type="range" id="targetX" min="-100" max="100" value="20">
+        <label for="targetY">Target Y:</label>
+        <input type="range" id="targetY" min="0" max="200" value="100">
+        <label for="targetZ">Target Z:</label>
+        <input type="range" id="targetZ" min="-100" max="100" value="50">
+    </div>
+
+    <script type="importmap">
+    {
+        "imports": {
+            "three": "https://unpkg.com/three@0.163.0/build/three.module.js",
+            "three/addons/": "https://unpkg.com/three@0.163.0/examples/jsm/",
+            "ik": "https://unpkg.com/three-ik@0.4.1/build/three-ik.module.js"
+        }
+    }
+    </script>
+    <script type="module" src="main.js"></script>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v8c78df7c7c0f484497ecbca7046644da1771523124516" integrity="sha512-8DS7rgIrAmghBFwoOTujcf6D9rXvH8xm8JQ1Ja01h9QX8EzXldiszufYa4IFfKdLUKTTrnSFXLDkUEOTrZQ8Qg==" data-cf-beacon='{"version":"2024.11.0","token":"4c6229722a6346bc8eb5cb0e5eae5d41","server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
+</body>
+</html>
+
